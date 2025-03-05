@@ -2,7 +2,7 @@ def calculate(expression : str) -> float:
     '''To calcuate the value'''
     import re, logging
     from datetime import datetime
-    if re.match("[\(]?\d+[\s]?[+|\-|*|\/][\s]?\d+[\)]?", expression):
+    if re.match("(\(?\d+[+|\-|*|\/].+\)?)|\(?\d\s?[+|\-|*|\/].+", expression):
         try:
             result = eval(expression)
             return float(result)
